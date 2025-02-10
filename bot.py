@@ -17,7 +17,10 @@ from typing import Union, Optional, AsyncGenerator
 from pyrogram import types
 from aiohttp import web
 from plugins import web_server
-PORT = env.get("PORT", "8090")
+import os
+
+PORT = int(os.getenv("PORT", "8090"))  
+
 
 class Bot(Client):
 
