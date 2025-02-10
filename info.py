@@ -29,9 +29,17 @@ auth_grp = environ.get('AUTH_GROUP')
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
+
 DATABASE_NAME = environ.get('DATABASE_NAME', "")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+from motor.motor_asyncio import AsyncIOMotorClient
+from umongo import Instance
+
+DATABASE_URL = "mongodb+srv://GORU:GORU@cluster0.euujugz.mongodb.net/?retryWrites=true&w=majority"  # Replace with your actual MongoDB URI
+client = AsyncIOMotorClient(DATABASE_URL)
+db = client.get_database()  # Ensure this returns a valid database object
+
+instance = Instance(db)
 
 #Req Fsub
 FSUB_MODE = "REQ"
