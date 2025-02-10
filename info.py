@@ -33,11 +33,12 @@ AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 DATABASE_NAME = "mydatabase"
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 from motor.motor_asyncio import AsyncIOMotorClient
-from umongo import Instance
 
-DATABASE_URI = "mongodb+srv://GORU:GORU@cluster0.euujugz.mongodb.net/?retryWrites=true&w=majority"  # Replace with your actual MongoDB URI
+DATABASE_URI = "mongodb+srv://username:password@cluster.mongodb.net/mydatabase?retryWrites=true&w=majority"
+DATABASE_NAME = "mydatabase"  # Add the actual database name
+
 client = AsyncIOMotorClient(DATABASE_URI)
-db = client.get_database()  # Ensure this returns a valid database object
+db = client[DATABASE_NAME]  # Correct way to access the database
 
 instance = Instance(db)
 
