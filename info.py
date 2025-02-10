@@ -35,7 +35,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 from motor.motor_asyncio import AsyncIOMotorClient
 from umongo import Instance
 
-DATABASE_URL = "mongodb+srv://GORU:GORU@cluster0.euujugz.mongodb.net/?retryWrites=true&w=majority"  # Replace with your actual MongoDB URI
+DATABASE_URI = "mongodb+srv://GORU:GORU@cluster0.euujugz.mongodb.net/?retryWrites=true&w=majority"  # Replace with your actual MongoDB URI
 client = AsyncIOMotorClient(DATABASE_URL)
 db = client.get_database()  # Ensure this returns a valid database object
 
