@@ -36,7 +36,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from umongo import Instance
 
 DATABASE_URI = "mongodb+srv://GORU:GORU@cluster0.euujugz.mongodb.net/?retryWrites=true&w=majority"  # Replace with your actual MongoDB URI
-client = AsyncIOMotorClient(DATABASE_URL)
+client = AsyncIOMotorClient(DATABASE_URI)
 db = client.get_database()  # Ensure this returns a valid database object
 
 instance = Instance(db)
