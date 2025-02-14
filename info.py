@@ -1,5 +1,6 @@
 import re
 from os import environ
+from correct_module import Instance  # Replace 'correct_module' with the actual module name
 
 id_pattern = re.compile(r'^.\d+$')
 def is_enabled(value, default):
