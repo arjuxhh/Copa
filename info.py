@@ -34,7 +34,7 @@ DATABASE_NAME = "mydatabase"
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 from motor.motor_asyncio import AsyncIOMotorClient
 
-DATABASE_URI = "mongodb+srv://username:password@cluster.mongodb.net/mydatabase?retryWrites=true&w=majority"
+DATABASE_URI = "mongodb+srv://GORU:GORU@cluster0.euujugz.mongodb.net/?retryWrites=true&w=majority"
 DATABASE_NAME = "mydatabase"  # Add the actual database name
 
 client = AsyncIOMotorClient(DATABASE_URI)
