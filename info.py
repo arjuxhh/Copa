@@ -1,6 +1,6 @@
 import re
 from os import environ
-from correct_module import Instance  # Replace 'correct_module' with the actual module name
+from umongo import Instance  # Replace 'correct_module' with the actual module name
 
 id_pattern = re.compile(r'^.\d+$')
 def is_enabled(value, default):
@@ -41,7 +41,7 @@ DATABASE_NAME = "mydatabase"  # Add the actual database name
 client = AsyncIOMotorClient(DATABASE_URI)
 db = client[DATABASE_NAME]  # Correct way to access the database
 
-Instance = Instance(db)
+instance = Instance(db)
 
 #Req Fsub
 FSUB_MODE = "REQ"
