@@ -1,5 +1,7 @@
 from os import environ
-from info import is_enabled
+def get_is_enabled():
+    from info import is_enabled  # Import inside the function
+    return is_enabled
 # config.py
 DATABASE_URI = "mongodb+srv://GORU:GORU@cluster0.euujugz.mongodb.net/?retryWrites=true&w=majority"
 DATABASE_NAME = environ.get('DATABASE_NAME', "")  # Add the actual database name
