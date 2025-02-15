@@ -12,7 +12,10 @@ def is_enabled(value, default):
         return False
     else:
         return default
-
+def get_db():
+    from database.users_chats_db import db  # Import inside function
+    return db
+    
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', ''))
