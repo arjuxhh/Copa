@@ -36,8 +36,7 @@ AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 from motor.motor_asyncio import AsyncIOMotorClient
 
-DATABASE_URI = "mongodb+srv://GORU:GORU@cluster0.euujugz.mongodb.net/?retryWrites=true&w=majority"
-DATABASE_NAME = environ.get('DATABASE_NAME', "")  # Add the actual database name
+  
 
 client = AsyncIOMotorClient(DATABASE_URI)
 db = client[DATABASE_NAME]  # Correct way to access the database
@@ -58,11 +57,9 @@ JOIN_REQS_DB = environ.get("JOIN_REQS_DB", DATABASE_URI)
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
-IMDB = is_enabled((environ.get('IMDB', "False")), False)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<b>📂 Fɪʟᴇ ɴᴀᴍᴇ :</b>  <code>{file_name}</code>\n\n<b>=========== • ✠ • ===========\n▫️ ɢʀᴏᴜᴘ : <b><i>@Moviehub_support</i></b>\n▫️ ᴄʜᴀɴɴᴇʟ : <b><i>@Moviehubottupdates</i></b>\n=========== • ✠ • ===========</b>")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<code>{query}</code>\n\n<b>〓〓〓 <a href={url}>{title}</a> 〓〓〓\n\n⭐️ ɪᴍᴅʙ  {rating} | ⏰ ʀᴜɴ {runtime} ᴍɪɴ |\n📆 ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ : {release_date}</b>\n\n● <code>{genres}</code>\n● <code>languages</code>\n\n📖 <b>ꜱᴛᴏʀʏ</b> : {plot}\n\n<b><i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ</i></b> <a href='https://t.me/moviehub_support'><b><i>ᴍᴏᴠɪᴇʜᴜʙ</i></b></a>")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
