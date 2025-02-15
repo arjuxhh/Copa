@@ -1,3 +1,4 @@
+from info import is_enabled
 # config.py
 DATABASE_URI = "your_database_uri"
 DATABASE_NAME = "your_database_name"
