@@ -1,9 +1,9 @@
 from os import environ
 from info import is_enabled
 # config.py
-DATABASE_URI = "your_database_uri"
-DATABASE_NAME = "your_database_name"
-COLLECTION_NAME = "your_collection_name"
+DATABASE_URI = "mongodb+srv://GORU:GORU@cluster0.euujugz.mongodb.net/?retryWrites=true&w=majority"
+DATABASE_NAME = environ.get('DATABASE_NAME', "")  # Add the actual database name
+COLLECTION_NAME = "Telegram_files"
 USE_CAPTION_FILTER = True
 IMDB = "some_value"
 IMDB_TEMPLATE = "some_value"
