@@ -1,7 +1,8 @@
 import re
 from os import environ
 from umongo import Instance  # Replace 'correct_module' with the actual module name
-from database.users_chats_db import db
+# info.py
+from config import DATABASE_URI, DATABASE_NAME, COLLECTION_NAME, USE_CAPTION_FILTER
 
 id_pattern = re.compile(r'^.\d+$')
 def is_enabled(value, default):
