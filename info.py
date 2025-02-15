@@ -32,12 +32,12 @@ AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
 
-DATABASE_NAME = environ.get('DATABASE_NAME', "")
+
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 from motor.motor_asyncio import AsyncIOMotorClient
 
 DATABASE_URI = "mongodb+srv://GORU:GORU@cluster0.euujugz.mongodb.net/?retryWrites=true&w=majority"
-DATABASE_NAME = "mydatabase"  # Add the actual database name
+DATABASE_NAME = environ.get('DATABASE_NAME', "")  # Add the actual database name
 
 client = AsyncIOMotorClient(DATABASE_URI)
 db = client[DATABASE_NAME]  # Correct way to access the database
