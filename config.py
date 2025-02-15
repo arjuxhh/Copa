@@ -1,3 +1,4 @@
+from os import environ
 from info import is_enabled
 # config.py
 DATABASE_URI = "your_database_uri"
